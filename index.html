@@ -1,936 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rohan Kishore</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WEBNITE Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+    body {
+      background: linear-gradient(120deg, #0b0b0b 60%, #e100ff88 90%, #ff006688);
+      color: white;
+      padding-left: 5%;
+      scroll-behavior: smooth;
+    }
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+    .container {
+      max-width: 500px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    .logo {
+      font-size: 2.5rem;
+      letter-spacing: 8px;
+      font-weight: bold;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.2s;
+    }
+
+    .subheading {
+      margin-top: 0.5rem;
+      color: #cccccc;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.4s;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      max-width: 400px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.6s;
+    }
+
+    .button {
+      border: 1px solid #f1f1f1;
+      padding: 0.8rem 1.2rem;
+      background: transparent;
+      color: #f1f1f1;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .button:hover {
+      background: #ff00cc33;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #f1f1f1aa;
+    }
+
+    .footer a {
+      color: #f1f1f1;
+      text-decoration: none;
+    }
+
+    .section {
+      padding: 4rem 5% 2rem;
+      max-width: 800px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #ff66cc;
+    }
+
+    .section p {
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Rohan Kishore" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Rohan Kishore">Rohan Kishore</h1>
-
-          <p class="title">Python Developer</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:rohankishore746@outlook.com" class="contact-link">rohankishore746@outlook.com</a>
-            </div>
-
-          </li>
-
-
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="24-07-2006">July 24, 2006</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Thrissur, Kerala, India</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://twitter.com/Aura_Text" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.instagram.com/_.j0ps/" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://github.com/rohankishore" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-           <li class="social-item">
-            <a href="https://www.linkedin.com/in/rohankishore/" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I am an 18-year-old Python developer and freelancer from Kerala, India, with four years of development experience.
-            My expertise includes working with PyQt, NumPy, Matplotlib, and a variety of other technologies.
-          </p>
-
-          <p>
-            My goal is to contribute to open source projects while making a positive impact on society.
-            By leveraging my technical skills and experience, I aim to develop and support software solutions that address
-            real-world challenges, promote collaboration, and enhance the quality of life for communities worldwide.
-          </p>
-
-          <a href="https://www.github.com/rohankishore/"><img class="gitroll_badge" src="https://github-widgetbox.vercel.app/api/profile?username=rohankishore&data=followers,repositories,stars,commits" /></a>
-
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">GUI design</h4>
-
-                <p class="service-item-text">
-                  The most modern and high-quality GUI design made at a professional level.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Python development</h4>
-
-                <p class="service-item-text">
-                  Developing Python libraries and also apps like Plotium, Youtility and much more
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Freelancing</h4>
-
-                <p class="service-item-text">
-                I periodically take on freelance projects on Fiverr, where
-                  I apply my skills to help clients with various technical needs.
-                  <a href="https://www.fiverr.com/rohancodespy/">Fiverr</a>
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-comp.svg" alt="HackerRank" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Competitive Programming</h4>
-
-                <p class="service-item-text">
-                  I regularly solve Data Structures, Algorithms, and Statistical
-                  challenges on HackerRank to sharpen my skills and expand my knowledge.
-                  <a href="https://www.hackerrank.com/profile/rohankishore7461">HackerRank</a>
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-learn.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Learning</h4>
-
-                <p class="service-item-text">
-                  Well, you don't stop learning till you die, do you?
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Joining Clg </h4>
-
-              <span>2024 — 202x</span>
-
-              <p class="timeline-text">
-                <!-- FUTURE REF: -->
-                <!--  Add details about college here (when you join) -->
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Vivekodayam Boys HSS</h4>
-
-              <span>2018 — 2024</span>
-
-              <p class="timeline-text">
-                Completed High school and Higher Secondary School here. Passed 12th with 97% aggregate, and 98% in 12th alone.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <!-- FUTURE REF: -->
-        <!--  You can add your experience later -->
-
-        <!-- <section class="timeline"> -->
-
-        <!--   <div class="title-wrapper"> -->
-        <!--     <div class="icon-box"> -->
-        <!--       <ion-icon name="book-outline"></ion-icon> -->
-        <!--     </div> -->
-
-        <!--     <h3 class="h3">Experience</h3> -->
-        <!--   </div> -->
-
-        <!--   <ol class="timeline-list"> -->
-
-        <!--     <li class="timeline-item"> -->
-
-        <!--       <h4 class="h4 timeline-item-title">-</h4> -->
-
-        <!--       <span>202x — 202x</span> -->
-
-        <!--       <p class="timeline-text"> -->
-        <!--         - -->
-        <!--       </p> -->
-
-        <!--     </li> -->
-
-        <!--     <li class="timeline-item"> -->
-
-        <!--       <h4 class="h4 timeline-item-title">-</h4> -->
-
-        <!--       <span>202x — 202x</span> -->
-
-        <!--       <p class="timeline-text"> -->
-        <!--         - -->
-        <!--       </p> -->
-
-        <!--     </li> -->
-
-        <!--     <li class="timeline-item"> -->
-
-        <!--       <h4 class="h4 timeline-item-title">-</h4> -->
-
-        <!--       <span>202x — 202x</span> -->
-
-        <!--       <p class="timeline-text"> -->
-        <!--         - -->
-        <!--       </p> -->
-
-        <!--     </li> -->
-
-        <!--   </ol> -->
-
-        <!-- </section> -->
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Python</h5>
-                <data value="80">85%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">GUI Design (Tkinter & PyQt)</h5>
-                <data value="70">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
-                <data value="40">40%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Numpy</h5>
-                <data value="40">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Matplotlib</h5>
-                <data value="40">40%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-                        <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Numpy</h5>
-                <data value="40">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-                        <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Git</h5>
-                <data value="40">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-                        <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">PyCharm & VSCode</h5>
-                <data value="40">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Libraries</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>CLI</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Libraries</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>CLI</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.png" alt="auratext" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Aura Text</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="youtility" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Youtility</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.png" alt="zennotes" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">ZenNotes</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="spotifyte" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Spotifyte</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="cashflow" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">CashFlow</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="animesnap" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">AnimeSnap</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="graphyte" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Graphyte</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.png" alt="tempus" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Tempus</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="libraries">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="physipy" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">PhysiPy</h3>
-
-                <p class="project-category">Libraries</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="libraries">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-10.png" alt="plotium" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Plotium</h3>
-
-                <p class="project-category">Libraries</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="cli">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-11.png" alt="pastecmd" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">PasteCMD</h3>
-
-                <p class="project-category">CLI</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125531.64342413832!2d76.22325045!3d10.511387599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ee15ed42d1bb%3A0x82e45aa016ca7db!2sThrissur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1723061687462!5m2!1sen!2sin"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
+  <div class="container">
+    <div class="logo">WEBNITE</div>
+    <div class="subheading">LANDING PAGE</div>
+    <div class="buttons">
+      <div class="button">Company Website <span>&#8250;</span></div>
+      <div class="button">Personal Pages <span>&#8250;</span></div>
+      <div class="button">Portfolio <span>&#8250;</span></div>
+      <div class="button">Project Pages <span>&#8250;</span></div>
     </div>
+    <div class="footer">
+      <p><span style="color: #ff00cc">&#x1F33F;</span> <a href="https://instagram.com/webnite.in">@webnite.in</a></p>
+    </div>
+  </div>
 
-  </main>
+  <div class="section" id="about">
+    <h2>About Us</h2>
+    <p>Webnite is a creative digital space focused on building elegant web experiences. We specialize in portfolios, company websites, and project showcases.</p>
+  </div>
 
+  <div class="section" id="vision">
+    <h2>Vision</h2>
+    <p>Our vision is to empower individuals and businesses with visually stunning and highly functional websites that make a lasting impression online.</p>
+  </div>
 
-
-
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <div class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Reach us via <a href="mailto:hello@webnite.in" style="color:#ff99cc">hello@webnite.in</a> or follow our journey on Instagram <a href="https://instagram.com/webnite.in" style="color:#ff99cc">@webnite.in</a>.</p>
+  </div>
 </body>
-
 </html>
