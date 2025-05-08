@@ -3,142 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WEBNITE</title>
+  <title>Webnite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
+    body, html {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(120deg, #0b0b0b 60%, #e100ff88 90%, #ff006688);
+      font-family: 'Inter', sans-serif;
       color: white;
-      padding-left: 5%;
-      scroll-behavior: smooth;
+      height: 100vh;
+      overflow: hidden;
     }
-
-    .container {
-      max-width: 500px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .logo {
-      font-size: 2.5rem;
-      letter-spacing: 8px;
-      font-weight: bold;
-      opacity: 0;
-      transform: translateY(-20px);
-      animation: fadeInUp 1s forwards 0.2s;
-    }
-
-    .subheading {
-      margin-top: 0.5rem;
-      color: #cccccc;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      opacity: 0;
-      transform: translateY(-20px);
-      animation: fadeInUp 1s forwards 0.4s;
-    }
-
-    .buttons {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      max-width: 400px;
-      opacity: 0;
-      transform: translateY(-20px);
-      animation: fadeInUp 1s forwards 0.6s;
-    }
-
-    .button {
-      border: 1px solid #f1f1f1;
-      padding: 0.8rem 1.2rem;
-      background: transparent;
-      color: #f1f1f1;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 15px 30px;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
     }
-
-    .button:hover {
-      background: #ff00cc33;
+    header nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
     }
-
-    .footer {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #f1f1f1aa;
-    }
-
-    .footer a {
-      color: #f1f1f1;
+    header nav a {
+      color: white;
       text-decoration: none;
+      font-weight: 500;
     }
-
-    .section {
-      padding: 4rem 5% 2rem;
-      max-width: 800px;
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 50px;
+      box-sizing: border-box;
+      z-index: 1;
     }
-
-    .section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #ff66cc;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(128, 0, 128, 0.5), rgba(0, 0, 0, 0.8));
+      z-index: 2;
     }
-
-    .section p {
-      line-height: 1.6;
-      color: #ddd;
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 600px;
     }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin: 0 0 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .hero .buttons {
+      display: flex;
+      gap: 15px;
+    }
+    .hero .buttons a {
+      background: white;
+      color: #6a0dad;
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .explore {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: 500;
+      z-index: 3;
+    }
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">WEBNITE</div>
-    <div class="subheading">LANDING PAGE</div>
-    <div class="buttons">
-      <div class="button">Company Website <span>&#8250;</span></div>
-      <div class="button">Personal Pages <span>&#8250;</span></div>
-      <div class="button">Portfolio <span>&#8250;</span></div>
-      <div class="button">Project Pages <span>&#8250;</span></div>
+  <video class="bg-video" autoplay muted loop>
+    <source src="assets/videos/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <header>
+    <div><strong>📞 1.800.INSIGHT</strong></div>
+    <nav>
+      <a href="#">What we do</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Client stories</a>
+      <a href="#">Connect with us</a>
+      <input type="text" placeholder="Search..." style="padding: 6px; border-radius: 5px; border: none;">
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>One partner.<br>Infinite possibilities.</h1>
+      <p>With an integrated IT strategy, you can reduce complexity, scale faster, and achieve more.</p>
+      <div class="buttons">
+        <a href="#">Discover our capabilities</a>
+        <a href="#">Buy products</a>
+      </div>
     </div>
-    <div class="footer">
-      <p><span style="color: #ff00cc">&#x1F33F;</span> <a href="https://instagram.com/webnite.in">@webnite.in</a></p>
-    </div>
-  </div>
-
-  <div class="section" id="about">
-    <h2>About Us</h2>
-    <p>Webnite is a creative digital space focused on building elegant web experiences. We specialize in portfolios, company websites, and project showcases.</p>
-  </div>
-
-  <div class="section" id="vision">
-    <h2>Vision</h2>
-    <p>Our vision is to empower individuals and businesses with visually stunning and highly functional websites that make a lasting impression online.</p>
-  </div>
-
-  <div class="section" id="contact">
-    <h2>Contact</h2>
-    <p>Reach us via <a href="mailto:hello@webnite.in" style="color:#ff99cc">hello@webnite.in</a> or follow our journey on Instagram <a href="https://instagram.com/webnite.in" style="color:#ff99cc">@webnite.in</a>.</p>
-  </div>
+    <div class="explore">Explore ↓</div>
+  </section>
 </body>
 </html>
