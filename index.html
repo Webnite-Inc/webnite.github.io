@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Webnite</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body, html {
       margin: 0;
       padding: 0;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
       color: white;
-      height: 100vh;
-      overflow: hidden;
+      height: 100%;
+      overflow: hidden; /* Prevent horizontal scrolling */
     }
+
     header {
-      position: absolute;
+      position: fixed; /* Make the header fixed */
       top: 0;
       left: 0;
       width: 100%;
@@ -26,28 +27,41 @@
       z-index: 10;
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
+      box-sizing: border-box; /* Prevent any padding overflow */
     }
+
+    header div {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+    }
+
     header nav {
       display: flex;
       gap: 20px;
       align-items: center;
     }
+
     header nav a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
     }
+
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: calc(100vh - 60px); /* Adjust the hero section height */
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 100px 50px;
       box-sizing: border-box;
       z-index: 1;
+      overflow: hidden; /* Prevent scrolling overflow */
     }
+
+    /* Gradient now spans the full height of the screen */
     .hero::before {
       content: "";
       position: absolute;
@@ -55,27 +69,32 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba(128, 0, 128, 0.5), rgba(0, 0, 0, 0.8));
+      background: linear-gradient(to bottom, rgba(128, 0, 128, 0.5), rgba(0, 0, 0, 0.8)); /* Gradient spanning full height */
       z-index: 2;
     }
+
     .hero-content {
       position: relative;
       z-index: 3;
       max-width: 600px;
     }
+
     .hero h1 {
       font-size: 48px;
       font-weight: 700;
       margin: 0 0 20px;
     }
+
     .hero p {
       font-size: 18px;
       margin-bottom: 30px;
     }
+
     .hero .buttons {
       display: flex;
       gap: 15px;
     }
+
     .hero .buttons a {
       background: white;
       color: #6a0dad;
@@ -84,6 +103,7 @@
       text-decoration: none;
       font-weight: 600;
     }
+
     .explore {
       position: absolute;
       bottom: 30px;
@@ -92,6 +112,7 @@
       font-weight: 500;
       z-index: 3;
     }
+
     video.bg-video {
       position: fixed;
       top: 0;
@@ -110,22 +131,22 @@
   </video>
 
   <header>
-    <div><strong>📞 1.800.INSIGHT</strong></div>
+    <div><strong>Webnite</strong></div>
     <nav>
-      <a href="#">What we do</a>
-      <a href="#">Portfolio</a>
-      <a href="#">Client stories</a>
-      <a href="#">Connect with us</a>
+      <a href="what-we-do.html">What we do</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="client-stories.html">Client stories</a>
+      <a href="contact.html">Connect with us</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h1>One partner.<br>Infinite possibilities.</h1>
-      <p>With an integrated IT strategy, you can reduce complexity, scale faster, and achieve more.</p>
+      <h1>Transform Your Vision into Stunning Online Presence</h1>
+      <p>We create high-performance websites and landing pages designed to help individuals, businesses, and brands thrive in the digital world.</p>
       <div class="buttons">
-        <a href="#">Discover our capabilities</a>
-        <a href="#">Buy products</a>
+        <a href="products.html">Get Started</a>
+        <a href="capabilities.html">Discover our capabilities</a>
       </div>
     </div>
     <div class="explore">Explore ↓</div>
