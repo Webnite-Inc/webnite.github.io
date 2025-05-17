@@ -12,11 +12,12 @@
       font-family: 'Poppins', sans-serif;
       color: white;
       height: 100%;
-      overflow: hidden; /* Prevent horizontal scrolling */
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     header {
-      position: fixed; /* Make the header fixed */
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -27,7 +28,7 @@
       z-index: 10;
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
-      box-sizing: border-box; /* Prevent any padding overflow */
+      box-sizing: border-box;
     }
 
     header div {
@@ -51,17 +52,15 @@
     .hero {
       position: relative;
       width: 100%;
-      height: calc(100vh - 60px); /* Adjust the hero section height */
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 100px 50px;
       box-sizing: border-box;
       z-index: 1;
-      overflow: hidden; /* Prevent scrolling overflow */
     }
 
-    /* Gradient now spans the full height of the screen */
     .hero::before {
       content: "";
       position: absolute;
@@ -69,7 +68,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba(128, 0, 128, 0.5), rgba(0, 0, 0, 0.8)); /* Gradient spanning full height */
+      background: linear-gradient(to bottom, rgba(80, 0, 80, 0.6), rgba(0, 0, 0, 0.9));
       z-index: 2;
     }
 
@@ -113,6 +112,23 @@
       z-index: 3;
     }
 
+    .explore button {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 500;
+      backdrop-filter: blur(6px);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .explore button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
     video.bg-video {
       position: fixed;
       top: 0;
@@ -121,6 +137,36 @@
       height: 100%;
       object-fit: cover;
       z-index: 0;
+    }
+
+    section.scroll-section {
+      position: relative;
+      z-index: 3;
+      padding: 100px 50px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(18px);
+    }
+
+    section.scroll-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    section.scroll-section p {
+      font-size: 18px;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    ul.services-list {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+
+    ul.services-list li {
+      margin-bottom: 10px;
+      font-size: 18px;
     }
   </style>
 </head>
@@ -149,7 +195,50 @@
         <a href="capabilities.html">Discover our capabilities</a>
       </div>
     </div>
-    <div class="explore">Explore ↓</div>
+    <div class="explore">
+      <button onclick="document.getElementById('what-we-do').scrollIntoView({ behavior: 'smooth' })">
+        Explore ↓
+      </button>
+    </div>
+  </section>
+
+  <section id="what-we-do" class="scroll-section">
+    <h2>What We Do</h2>
+    <p>At Webnite, we specialize in building custom websites that help businesses grow, connect, and stand out.</p>
+    <p>We combine thoughtful design with clean development to deliver fast, functional, and mobile-friendly websites tailored to each client’s needs. Whether you’re launching a brand-new business or upgrading an outdated site, we make the process smooth, straightforward, and results-driven.</p>
+    <p>Our services include:</p>
+    <ul class="services-list">
+      <li>Custom website design & development</li>
+      <li>Responsive and mobile-optimized layouts</li>
+      <li>Performance-focused coding for fast load times</li>
+      <li>Basic on-page SEO setup</li>
+      <li>Ongoing support & updates (on request)</li>
+    </ul>
+    <p>Each website we create is built with purpose—designed not only to look great, but to drive real business outcomes.</p>
+  </section>
+
+<section class="scroll-section">
+  <h2>Why Choose Us</h2>
+
+  <p><strong>We understand that trusting someone with your online presence is a big decision. Here's why our clients choose to work with us:</strong></p>
+
+  <p><strong>1. We’re passionate about quality.</strong><br>
+  Every project is a reflection of our work ethic and attention to detail. We don’t cut corners—we build websites designed to last and perform.</p>
+
+  <p><strong>2. We bring fresh ideas and a modern approach.</strong><br>
+  As young entrepreneurs, we stay ahead of trends and tech. We create digital experiences that feel current, intuitive, and aligned with today’s user expectations.</p>
+
+  <p><strong>3. We prioritize communication and reliability.</strong><br>
+  From the first conversation to the final launch, we keep our clients informed and involved. No confusion, no long waits—just clear, consistent progress.</p>
+
+  <p><strong>4. We grow alongside our clients.</strong><br>
+  We’re a young company with big ambitions, and we treat every project as a stepping stone—for you and for us. Your success is our success.</p>
+
+</section>
+
+  <section class="scroll-section">
+    <h2>Let's Build Together</h2>
+    <p>Have a vision or idea in mind? We’re here to bring it to life. Whether you're launching a new brand or refreshing an old one, Webnite is your digital partner from start to success.</p>
   </section>
 </body>
 </html>
