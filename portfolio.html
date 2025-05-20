@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Webnite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0f10, #1a1a1d);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    header div {
+      font-size: 30px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    header nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #a855f7;
+    }
+
+    header nav a[aria-current="page"] {
+      color: #a855f7;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 80px 20px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 25px 20px;
+      box-shadow: 0 10px 36px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 50px rgba(168, 85, 247, 0.6);
+    }
+
+    .project-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #a855f7;
+      margin-bottom: 15px;
+    }
+
+    .project-description {
+      font-size: 16px;
+      color: #ccc;
+      flex-grow: 1;
+      margin-bottom: 25px;
+    }
+
+    .btn-view {
+      align-self: flex-start;
+      background-color: transparent;
+      border: 2px solid #a855f7;
+      color: #a855f7;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-view:hover {
+      background-color: #a855f7;
+      color: #fff;
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 15, 16, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+      padding: 20px;
+    }
+
+    .modal {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 14px 50px rgba(168, 85, 247, 0.6);
+      color: #ccc;
+      position: relative;
+      text-align: center;
+    }
+
+    .modal h2 {
+      color: #a855f7;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .modal p {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .btn-open-project {
+      background-color: #a855f7;
+      color: #fff;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-open-project:hover {
+      background-color: #9333ea;
+    }
+
+    .btn-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 32px;
+      color: #a855f7;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+
+    .btn-close:hover {
+      color: #fff;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+      margin-top: auto;
+    }
+
+    @media (max-width: 600px) {
+      .project-title {
+        font-size: 20px;
+      }
+
+      .modal h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><div>Webnite</div></a>
+    <nav>
+      <a href="what-we-do.html">What We Do</a>
+      <a href="portfolio.html" aria-current="page">Portfolio</a>
+      <a href="client-stories.html">Client Stories</a>
+      <a href="contact.html">Connect</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="portfolio-grid">
+      <div class="project-card">
+        <div class="project-title">Rohan Kishore's Personal Page</div>
+        <div class="project-description">
+          A sleek, responsive landing page designed to accompany personal resume.
+        </div>
+        <button class="btn-view" id="openModalBtn">View</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="btn-close" id="closeModalBtn" aria-label="Close modal">&times;</button>
+      <h2 id="modalTitle">Rohan Kishore's Personal Page</h2>
+      <p>This project is a sleek, responsive landing page designed to accompany personal info, resume and portfolio by combining modern design principles with smooth animations and clear call-to-actions.</p>
+      <a href="https://rohankishore.github.io/" target="_blank" rel="noopener" class="btn-open-project">Open Project</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Webnite. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    openModalBtn.addEventListener('click', () => {
+      modalOverlay.style.display = 'flex';
+      closeModalBtn.focus();
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modalOverlay.style.display = 'none';
+      openModalBtn.focus();
+    });
+
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
+        openModalBtn.focus();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.style.display === 'flex') {
+        modalOverlay.style.display = 'none';
+        openModalBtn.focus();
+      }
+    });
+  </script>
+</body>
+</html>
