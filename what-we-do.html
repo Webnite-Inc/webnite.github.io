@@ -63,7 +63,13 @@
     }
 
     header nav a:hover {
-      color: #fff;
+      color: #a855f7;
+    }
+
+    header nav a[aria-current="page"] {
+      color: #a855f7;
+      font-weight: 700;
+      text-decoration: underline;
     }
 
     .content {
@@ -153,7 +159,7 @@
   <header>
     <a href="index.html"><div>Webnite</div></a>
     <nav>
-      <a href="what-we-do.html">What We Do</a>
+      <a href="what-we-do.html" aria-current="page" >What We Do</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="client-stories.html">Client Stories</a>
       <a href="contact.html">Connect</a>
