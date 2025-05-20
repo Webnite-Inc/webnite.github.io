@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us | Webnite</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+
   <style>
     * {
       box-sizing: border-box;
@@ -51,7 +53,7 @@
       transition: color 0.3s;
     }
 
-     header nav a[aria-current="page"] {
+    header nav a[aria-current="page"] {
       color: #a855f7;
       font-weight: 700;
       text-decoration: underline;
@@ -78,6 +80,12 @@
       max-width: 600px;
       width: 100%;
       box-shadow: 0 10px 36px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .contact-box:hover {
+      box-shadow: 0 0 30px 6px #a855f7;
     }
 
     .contact-box h1 {
@@ -92,50 +100,35 @@
       color: #ccc;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    input, textarea {
-      background: rgba(255, 255, 255, 0.08);
-      border: none;
-      border-radius: 10px;
-      padding: 14px 18px;
-      color: #fff;
-      font-size: 16px;
-      outline: none;
-      transition: border 0.3s ease;
-    }
-
-    input:focus, textarea:focus {
-      border: 1px solid #a855f7;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .contact-box:hover {
-  box-shadow: 0 0 30px 6px #a855f7;
-}
-
-    button {
+    .mailto-button {
       background: #a855f7;
       border: none;
-      padding: 14px;
+      padding: 14px 24px;
       border-radius: 10px;
       font-size: 16px;
       font-weight: 600;
       color: #fff;
       cursor: pointer;
-      transition: background 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin: 20px 0;
+      transition: background 0.3s ease, transform 0.2s;
     }
 
-    button:hover {
+    .mailto-button:hover {
       background: #9333ea;
+      transform: translateY(-2px);
+    }
+
+    .qr-container {
+      margin-top: 20px;
+    }
+
+    .qr-container img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 16px #a855f7;
     }
 
     footer {
@@ -150,6 +143,10 @@
       .contact-box h1 {
         font-size: 28px;
       }
+
+      .mailto-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -158,28 +155,42 @@
   <header>
     <div>Webnite</div>
     <nav>
-<a href="what-we-do.html">What We Do</a>
+      <a href="what-we-do.html">What We Do</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="client-stories.html">Client Stories</a>
-<a href="contact.html" aria-current="page">Connect with Us</a>
+      <a href="contact.html" aria-current="page">Connect with Us</a>
     </nav>
   </header>
 
   <div class="contact-container">
     <div class="contact-box">
-      <h1>Contact Us</h1>
-      <p>Let’s talk about your project, idea, or question. We’ll get back to you as soon as we can.</p>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      <h1>Let's Get in Touch</h1>
+      <p>Click below to email us directly or scan the QR code to mail from your phone.</p>
+      <a href="mailto:webnite01@gmail.com" class="mailto-button">Send Email</a>
+      <div class="qr-container">
+        <img src="assets/images/qr_email.png" alt="Email QR Code" />
+      </div>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2025 Webnite. All rights reserved.</p>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <div style="display: flex; gap: 20px;">
+        <a href="https://www.instagram.com/yourhandle" target="_blank" aria-label="Instagram" style="color: #888; font-size: 20px; transition: color 0.3s;">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn" style="color: #888; font-size: 20px; transition: color 0.3s;">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:webnite01@gmail.com" aria-label="Email" style="color: #888; font-size: 20px; transition: color 0.3s;">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub" style="color: #888; font-size: 20px; transition: color 0.3s;">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <p>&copy; 2025 Webnite. All rights reserved.</p>
+    </div>
   </footer>
 
 </body>
