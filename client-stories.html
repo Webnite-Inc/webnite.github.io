@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Stories | Webnite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0f10, #1a1a1d);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    header div {
+      font-size: 30px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    header nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    header nav a {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #a855f7;
+    }
+
+    header nav a[aria-current="page"] {
+      color: #a855f7;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 80px 20px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .coming-soon {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 36px rgba(0, 0, 0, 0.4);
+      max-width: 600px;
+    }
+
+    .coming-soon h2 {
+      color: #a855f7;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .coming-soon p {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><div>Webnite</div></a>
+    <nav>
+      <a href="what-we-do.html">What We Do</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="client-stories.html" aria-current="page">Client Stories</a>
+      <a href="contact.html">Connect with Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="coming-soon">
+      <h2>No Client Stories Yet</h2>
+      <p>But hey, every legend starts somewhere. <br /><br />You could be our very first story. ✨</p>
+    </div>
+  </main>
+
+  <footer>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <div style="display: flex; gap: 20px;">
+        <a href="https://www.instagram.com/yourhandle" target="_blank" aria-label="Instagram" style="color: #888; font-size: 20px; transition: color 0.3s;">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn" style="color: #888; font-size: 20px; transition: color 0.3s;">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:webnite01@gmail.com" aria-label="Email" style="color: #888; font-size: 20px; transition: color 0.3s;">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/Webnite-Inc" target="_blank" aria-label="GitHub" style="color: #888; font-size: 20px; transition: color 0.3s;">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <p>&copy; 2025 Webnite. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
